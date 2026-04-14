@@ -64,8 +64,6 @@ function checaAlguemGanhou(celulaElement) {
         jogoEncerrado = true
     }
 
-    console.log(document.getElementById('mensagem-msg'));
-
     if(!jogoEncerrado){
         document.getElementById('mensagem-msg').classList.remove('mostrar')
     }else{
