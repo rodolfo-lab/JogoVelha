@@ -1,0 +1,34 @@
+.mensagem-msg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.mensagem-txt {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    text-align: center;
+    position: relative;
+}
+
+.mensagem-msg.fechar-btn {
+    position: absolute;
+    top: auto;
+    right:auto;
+    cursor: pointer;
+    transform: scale(0.9);
+
+}
+
+.mensagem-msg.mostrar{
+    display: flex;
+}

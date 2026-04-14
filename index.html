@@ -5,24 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo da Velha</title>
     <link rel="stylesheet" href="headStyle.css">
+    <link rel="stylesheet" href="mensagemTela.css">
+    <link rel="stylesheet" href="tableJogoVelha.css">
 
 </head>
 <body>
     <script src="jogoVelha.js"></script>
 
-    <div id="resultado">
-        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-    </div>
-
-    <header>
+    <header id="titulo-tela">
         <h1>Jogo da Velha</h1>
     </header>
 
-    <table>
-        <caption id="TituloBoard"></caption>
-        <link rel="stylesheet" href="tableJogoVelha.css" text>
 
-        <table id="game-board" style="width: 50%; height: 65%;">
+    <div class="mensagem-msg" id="mensagem-msg">
+        <div class="mensagem-txt">
+            <p id="texto-mensagem">Olá! Esta é uma mensagem na tela.</p>
+            <button id="fechar-btn" onclick="reiniciarJogo()" >Reiniciar</button>
+        </div>
+    </div>
+
+    <table>
+        <caption id="titulo-board"></caption>
+
+        <table id="game-board">
             <tr>
                 <td id="1" onclick="marcarConformeClick(1)"></td>
                 <td id="2" onclick="marcarConformeClick(2)"></td>

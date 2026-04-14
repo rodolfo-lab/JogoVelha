@@ -1,22 +1,26 @@
-var Jogador = 'X'
+var Jogador = 'Capivara Joia'
 var jogoEncerrado = false
 
 function marcarConformeClick(id) {
 
     const celulaElement = document.getElementById(id)
+
+    console.log(celulaElement.childElementCount, jogoEncerrado);
+
+
     if (celulaElement.childElementCount == 0 && !jogoEncerrado){
-        if (Jogador == 'X') {
+        if (Jogador == 'Capivara Joia') {
             carregarImagem('imagem/joivara.png', celulaElement)
             if (checaAlguemGanhou(celulaElement))
                 return
 
-            Jogador = 'O'
+            Jogador = 'Capivara Sulista'
         } else {
             carregarImagem('imagem/bravara.png', celulaElement)
             if (checaAlguemGanhou(celulaElement))
                 return
 
-            Jogador = 'X'
+            Jogador = 'Capivara Joia'
         }
     }
 }
@@ -50,20 +54,25 @@ function checaAlguemGanhou(celulaElement) {
             verificaVelha[combinacao[1]] = true
             verificaVelha[combinacao[2]] = true
 
-            if (verificarSeGanhou(celula1, celula2, celula3, celulaElement)) {
-                return true
-            }
+            verificarSeGanhou(celula1, celula2, celula3, celulaElement)
         }
 
     }
 
     if (verificaVelha.every(v => v)) {
-        alteraCampoResultado('Deu velha!', 'red')
+        alteraMensagem('Deu velha!', 'red')
         jogoEncerrado = true
-        return true
     }
 
-    return false
+    console.log(document.getElementById('mensagem-msg'));
+
+    if(!jogoEncerrado){
+        document.getElementById('mensagem-msg').classList.remove('mostrar')
+    }else{
+        document.getElementById('mensagem-msg').classList.add('mostrar')
+    }
+
+    return jogoEncerrado
 
 }
 
@@ -74,22 +83,20 @@ function verificarSeGanhou(celula1, celula2, celula3, celulaElement) {
         celula1.firstChild.src ==
         celula3.firstChild.src) {
 
-        alteraCampoResultado('O jogador ' + Jogador + ' ganhou!', 'green')
+        alteraMensagem('O jogador ' + Jogador + ' ganhou!', 'green')
         celula3.firstChild.style.boxShadow = '0px 0px 0px 20px green'
         celula2.firstChild.style.boxShadow = '0px 0px 0px 20px green'
         celula1.firstChild.style.boxShadow = '0px 0px 0px 20px green'
         jogoEncerrado = true
-        return true
     }
 
 }
 
-function alteraCampoResultado(Texto, cor) {
+function alteraMensagem(Texto, cor) {
 
-    document.getElementById('resultado').innerText = Texto
-    document.getElementById('resultado').style.color = cor
-    document.getElementById('resultado').style.width = '100%'
-    document.getElementById('resultado').style.textAlign = 'center'
+    let mensagem = document.getElementById('texto-mensagem')
+    mensagem.innerText = Texto
+    mensagem.style.color = cor
 
 }
 
@@ -100,6 +107,7 @@ function reiniciarJogo(celulaElement) {
             celulaElement.removeChild(celulaElement.firstChild)
         }
     }
-    Jogador = 'X'
+    Jogador = 'Capivara Joia'
     jogoEncerrado = false
+    document.getElementById('mensagem-msg').classList.remove('mostrar')
 }

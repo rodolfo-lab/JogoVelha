@@ -1,15 +1,13 @@
-#TituloBoard {
-    font-size: 22px;
-    margin-bottom: 10px;
+#titulo-board {
+    font-size: 4%;
+    margin-bottom: 5%;
 }
 
 td {
-    width: 200px;
+    width:auto;
     height: 200px;
     border: 2px solid #000;
     text-align: center;
-    text-size-adjust: 100px;
-    font-size: 100px;
     cursor: pointer;
     padding: 0%;
     position: absloute;
@@ -26,16 +24,17 @@ td {
     height: 3cap;
 }
 
-#resultado{
-    width: '100%';
-    text-align: 'center';
-    scale: '2';
-    color: rgb(223, 192, 151);
-    display:hidden;
-    width:'100%';
+#game-board {
+    border-collapse:collapse;
+    border-radius: 15px;
+    table-layout: fixed;
+    justify-content: center;
+    width: 50%;
+    height: 65%;
 }
 
-#game-board {
-    border-collapse: collapse;
-    table-layout: fixed;
+#titulo-tela{
+    font-size: 22px;
+    margin-bottom: 2%;
+    margin-top: 3%;
 }
