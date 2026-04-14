@@ -59,7 +59,7 @@ function checaAlguemGanhou(celulaElement) {
 
     }
 
-    if (verificaVelha.every(v => v)) {
+    if (verificaVelha.every(v => v) && !jogoEncerrado) {
         alteraMensagem('Deu velha!', 'red')
         jogoEncerrado = true
     }
