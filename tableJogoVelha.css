@@ -1,4 +1,4 @@
-caption {
+#TituloBoard {
     font-size: 22px;
     margin-bottom: 10px;
 }
@@ -15,20 +15,27 @@ td {
     position: absloute;
 }
 
-button{
+#reiniciar{
     background-color: gray;
     color:black ;
     border: 20px;
     border-radius: 20px;
     cursor: pointer;
     margin-top: 15px;
-    width: 8%;
+    width: auto;
     height: 3cap;
 }
 
-div{
+#resultado{
     width: '100%';
     text-align: 'center';
     scale: '2';
-    color: aquamarine;
+    color: rgb(223, 192, 151);
+    display:hidden;
+    width:'100%';
+}
+
+#game-board {
+    border-collapse: collapse;
+    table-layout: fixed;
 }

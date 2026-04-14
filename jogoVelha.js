@@ -6,7 +6,6 @@ function marcarConformeClick(id) {
     const celulaElement = document.getElementById(id)
     if (celulaElement.childElementCount == 0 && !jogoEncerrado){
         if (Jogador == 'X') {
-            //celulaElement.style.backgroundColor = 'red'
             carregarImagem('imagem/joivara.png', celulaElement)
             if (checaAlguemGanhou(celulaElement))
                 return
@@ -33,7 +32,6 @@ function carregarImagem(imagemCaminho, celulaElement) {
 
 function checaAlguemGanhou(celulaElement) {
 
-    let loop = false
     let verificaVelha = new Array(9).fill(false)
     const combinacoesVitoria = [
         [0, 1, 2], [3, 4, 5], [6, 7, 8],

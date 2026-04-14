@@ -7,13 +7,12 @@ body {
     height: 90%auto;
     margin: 5%;
     background-color: aquamarine;
+    background-image: url("imagem/vovo.png");
+    background-repeat: repeat-y;
+    background-origin: padding-box;
+    background-size:auto;
 }
 
 header {
     margin-bottom: 5px;
-}
-
-table {
-    border-collapse: collapse;
-    table-layout: fixed;
 }
